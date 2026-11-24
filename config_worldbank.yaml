@@ -1,0 +1,7 @@
+# Phase 10 — World Bank WDI config (country-level external-validity source)
+dataset: "worldbank/WDI"
+year: 2022
+out_dir: "data"
+raw_file: "worldbank.parquet"      # produced by src/fetch_worldbank.py
+bench_file: "compstat_worldbank.jsonl"
+split_all_as: "worldbank"          # external set: one split, evaluated whole

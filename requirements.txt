@@ -1,0 +1,18 @@
+# statcompare — Plan A (Comparable-or-Not) requirements
+# ---- core (CPU-fine, needed for data + logic + eval) ----
+requests>=2.31
+pandas>=2.1
+pyarrow>=15.0
+pyyaml>=6.0
+tqdm>=4.66
+numpy>=1.26
+scikit-learn>=1.4
+rank-bm25>=0.2.2
+
+# ---- ML stack (install on the GPU box; see README for the torch line) ----
+# torch                      # install the CUDA build that matches the box, see README
+transformers>=4.44
+accelerate>=0.33
+sentence-transformers>=3.0
+datasets>=2.20
+# vllm                       # optional, only if you want fast batched LLM inference

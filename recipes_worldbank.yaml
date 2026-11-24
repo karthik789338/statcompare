@@ -1,0 +1,27 @@
+# Phase 10 — World Bank flip family: labour-force-participation denominator trap.
+# "Economically active as a share of the whole population" (crude activity rate)
+# vs "...of the working-age population 15-64" (refined rate) reorders countries
+# with different age structures.
+families:
+  WB_LFP:
+    concept: "Labour force participation"
+    question_template: "In which country was a larger share {phrase} {measure}: {A} or {B}?"
+    numerators:
+      - {var: "WB_LF", name: "economically active"}
+    denominators:
+      - name: "all population"
+        phrase: "of the whole population"
+        formula: ["+WB_POP_TOTAL"]
+      - name: "the working-age population"
+        phrase: "of people aged 15 to 64"
+        formula: ["+WB_POP_1564"]
+
+sampling:
+  max_pairs_per_cell: 400
+  keep_all_flips: true
+  min_share_gap: 0.01
+  random_seed: 13
+
+split: {}
+held_out_families: []
+n_distractors: 2

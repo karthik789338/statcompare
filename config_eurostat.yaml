@@ -1,0 +1,7 @@
+# Phase 10 — Eurostat config (NUTS-2 regional external-validity source)
+dataset: "eurostat/demo_r_pjangrp3"
+year: 2023
+out_dir: "data"
+raw_file: "eurostat.parquet"       # produced by src/fetch_eurostat.py
+bench_file: "compstat_eurostat.jsonl"
+split_all_as: "eurostat"

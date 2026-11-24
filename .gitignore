@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.zip
+.DS_Store
+*.parquet
+data/bench/parsed_frames_*.jsonl
+data/bench/judge_*.jsonl
+data/bench/eval_*.json

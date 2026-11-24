@@ -1,0 +1,447 @@
+{
+  "dev": {
+    "operating_points": {
+      "n": 349,
+      "n_flips": 37,
+      "methods": {
+        "method": {
+          "all": {
+            "coverage": 0.8252148997134671,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.972972972972973,
+            "risk": 0.0
+          }
+        },
+        "naive": {
+          "all": {
+            "coverage": 1.0,
+            "risk": 0.12893982808022922
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 1.0
+          }
+        },
+        "oracle": {
+          "all": {
+            "coverage": 0.9742120343839542,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.972972972972973,
+            "risk": 0.0
+          }
+        },
+        "judge_direct": {
+          "all": {
+            "coverage": 0.5845272206303725,
+            "risk": 0.08333333333333333
+          },
+          "flips": {
+            "coverage": 0.7567567567567568,
+            "risk": 0.5
+          }
+        },
+        "judge_cot": {
+          "all": {
+            "coverage": 0.6819484240687679,
+            "risk": 0.07563025210084033
+          },
+          "flips": {
+            "coverage": 0.8378378378378378,
+            "risk": 0.4838709677419355
+          }
+        },
+        "judge_meta": {
+          "all": {
+            "coverage": 0.9140401146131805,
+            "risk": 0.08150470219435736
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 0.4864864864864865
+          }
+        },
+        "pot": {
+          "all": {
+            "coverage": 0.5415472779369628,
+            "risk": 0.026455026455026454
+          },
+          "flips": {
+            "coverage": 0.4864864864864865,
+            "risk": 0.05555555555555555
+          }
+        }
+      }
+    },
+    "abstention_targeting": {
+      "n_answered": 288,
+      "method_error_on_answered": 0.0,
+      "n_abstained": 61,
+      "forced_naive_error_on_abstained": 0.14754098360655737
+    },
+    "kendall_ranking": {
+      "groups_scored": 10,
+      "mean_kendall_tau": 0.9958620689655172,
+      "pair_coverage": 0.8470588235294118
+    }
+  },
+  "test": {
+    "operating_points": {
+      "n": 466,
+      "n_flips": 98,
+      "methods": {
+        "method": {
+          "all": {
+            "coverage": 0.9313304721030042,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 0.0
+          }
+        },
+        "naive": {
+          "all": {
+            "coverage": 1.0,
+            "risk": 0.23605150214592274
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 1.0
+          }
+        },
+        "oracle": {
+          "all": {
+            "coverage": 0.9742489270386266,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 0.0
+          }
+        },
+        "judge_direct": {
+          "all": {
+            "coverage": 0.6330472103004292,
+            "risk": 0.15932203389830507
+          },
+          "flips": {
+            "coverage": 0.7551020408163265,
+            "risk": 0.5540540540540541
+          }
+        },
+        "judge_cot": {
+          "all": {
+            "coverage": 0.6802575107296137,
+            "risk": 0.14511041009463724
+          },
+          "flips": {
+            "coverage": 0.7755102040816326,
+            "risk": 0.5263157894736842
+          }
+        },
+        "judge_meta": {
+          "all": {
+            "coverage": 0.9206008583690987,
+            "risk": 0.1282051282051282
+          },
+          "flips": {
+            "coverage": 0.9795918367346939,
+            "risk": 0.4479166666666667
+          }
+        },
+        "pot": {
+          "all": {
+            "coverage": 0.51931330472103,
+            "risk": 0.028925619834710745
+          },
+          "flips": {
+            "coverage": 0.4897959183673469,
+            "risk": 0.0
+          }
+        }
+      }
+    },
+    "abstention_targeting": {
+      "n_answered": 434,
+      "method_error_on_answered": 0.0,
+      "n_abstained": 32,
+      "forced_naive_error_on_abstained": 0.375
+    },
+    "kendall_ranking": {
+      "groups_scored": 10,
+      "mean_kendall_tau": 0.9985915492957746,
+      "pair_coverage": 0.9559471365638766
+    }
+  },
+  "test_ood": {
+    "operating_points": {
+      "n": 866,
+      "n_flips": 566,
+      "methods": {
+        "method": {
+          "all": {
+            "coverage": 0.48267898383371827,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.3586572438162544,
+            "risk": 0.0
+          }
+        },
+        "naive": {
+          "all": {
+            "coverage": 1.0,
+            "risk": 0.6570438799076213
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 1.0
+          }
+        },
+        "oracle": {
+          "all": {
+            "coverage": 0.976905311778291,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.9699646643109541,
+            "risk": 0.0
+          }
+        },
+        "judge_direct": {
+          "all": {
+            "coverage": 0.37528868360277134,
+            "risk": 0.32
+          },
+          "flips": {
+            "coverage": 0.4028268551236749,
+            "risk": 0.45614035087719296
+          }
+        },
+        "judge_cot": {
+          "all": {
+            "coverage": 0.3083140877598152,
+            "risk": 0.31835205992509363
+          },
+          "flips": {
+            "coverage": 0.3674911660777385,
+            "risk": 0.40865384615384615
+          }
+        },
+        "judge_meta": {
+          "all": {
+            "coverage": 0.9745958429561201,
+            "risk": 0.2381516587677725
+          },
+          "flips": {
+            "coverage": 0.9929328621908127,
+            "risk": 0.3487544483985765
+          }
+        },
+        "pot": {
+          "all": {
+            "coverage": 0.6270207852193995,
+            "risk": 0.0718232044198895
+          },
+          "flips": {
+            "coverage": 0.6819787985865724,
+            "risk": 0.09067357512953368
+          }
+        }
+      }
+    },
+    "abstention_targeting": {
+      "n_answered": 418,
+      "method_error_on_answered": 0.0,
+      "n_abstained": 448,
+      "forced_naive_error_on_abstained": 0.8169642857142857
+    },
+    "kendall_ranking": {
+      "groups_scored": 4,
+      "mean_kendall_tau": 0.9066047471620227,
+      "pair_coverage": 0.4940898345153664
+    }
+  },
+  "worldbank": {
+    "operating_points": {
+      "n": 400,
+      "n_flips": 400,
+      "methods": {
+        "method": {
+          "all": {
+            "coverage": 0.82,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.82,
+            "risk": 0.0
+          }
+        },
+        "naive": {
+          "all": {
+            "coverage": 1.0,
+            "risk": 1.0
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 1.0
+          }
+        },
+        "oracle": {
+          "all": {
+            "coverage": 1.0,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 0.0
+          }
+        },
+        "judge_direct": {
+          "all": {
+            "coverage": 0.0,
+            "risk": null
+          },
+          "flips": {
+            "coverage": 0.0,
+            "risk": null
+          }
+        },
+        "judge_cot": {
+          "all": {
+            "coverage": 0.0,
+            "risk": null
+          },
+          "flips": {
+            "coverage": 0.0,
+            "risk": null
+          }
+        },
+        "judge_meta": {
+          "all": {
+            "coverage": 0.365,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.365,
+            "risk": 0.0
+          }
+        },
+        "pot": {
+          "all": {
+            "coverage": 0.4075,
+            "risk": 0.018404907975460124
+          },
+          "flips": {
+            "coverage": 0.4075,
+            "risk": 0.018404907975460124
+          }
+        }
+      }
+    },
+    "abstention_targeting": {
+      "n_answered": 328,
+      "method_error_on_answered": 0.0,
+      "n_abstained": 72,
+      "forced_naive_error_on_abstained": 1.0
+    },
+    "kendall_ranking": {
+      "groups_scored": 2,
+      "mean_kendall_tau": 0.9435454872348077,
+      "pair_coverage": 0.82
+    }
+  },
+  "eurostat": {
+    "operating_points": {
+      "n": 400,
+      "n_flips": 315,
+      "methods": {
+        "method": {
+          "all": {
+            "coverage": 0.9925,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.9968253968253968,
+            "risk": 0.0
+          }
+        },
+        "naive": {
+          "all": {
+            "coverage": 1.0,
+            "risk": 0.7875
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 1.0
+          }
+        },
+        "oracle": {
+          "all": {
+            "coverage": 1.0,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 1.0,
+            "risk": 0.0
+          }
+        },
+        "judge_direct": {
+          "all": {
+            "coverage": 0.0825,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.06349206349206349,
+            "risk": 0.0
+          }
+        },
+        "judge_cot": {
+          "all": {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.0761904761904762,
+            "risk": 0.0
+          }
+        },
+        "judge_meta": {
+          "all": {
+            "coverage": 0.1975,
+            "risk": 0.0
+          },
+          "flips": {
+            "coverage": 0.1365079365079365,
+            "risk": 0.0
+          }
+        },
+        "pot": {
+          "all": {
+            "coverage": 0.165,
+            "risk": 0.06060606060606061
+          },
+          "flips": {
+            "coverage": 0.09841269841269841,
+            "risk": 0.06451612903225806
+          }
+        }
+      }
+    },
+    "abstention_targeting": {
+      "n_answered": 397,
+      "method_error_on_answered": 0.0,
+      "n_abstained": 3,
+      "forced_naive_error_on_abstained": 0.3333333333333333
+    },
+    "kendall_ranking": {
+      "groups_scored": 2,
+      "mean_kendall_tau": 1.0,
+      "pair_coverage": 0.9925
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# Phase 10 — Eurostat flip family: old-age-dependency denominator trap.
+# "Aged 65+ as a share of the whole population" vs "...of the working-age
+# population 15-64" (the crude vs refined old-age dependency ratio) reorders
+# NUTS-2 regions with different child populations.
+families:
+  ES_OLDAGE:
+    concept: "Old-age dependency"
+    question_template: "In which region were people {measure} a larger share {phrase}: {A} or {B}?"
+    numerators:
+      - {var: "ES_GE65", name: "aged 65 or over"}
+    denominators:
+      - name: "all ages"
+        phrase: "of the whole population"
+        formula: ["+ES_TOTAL"]
+      - name: "the working-age population"
+        phrase: "of the working-age population (15 to 64)"
+        formula: ["+ES_A1519", "+ES_A2024", "+ES_A2529", "+ES_A3034",
+                  "+ES_A3539", "+ES_A4044", "+ES_A4549", "+ES_A5054",
+                  "+ES_A5559", "+ES_A6064"]
+
+sampling:
+  max_pairs_per_cell: 400
+  keep_all_flips: true
+  min_share_gap: 0.01
+  random_seed: 13
+
+split: {}
+held_out_families: []
+n_distractors: 2

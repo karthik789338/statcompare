@@ -1,0 +1,29 @@
+# statcompare Phase 1 — data acquisition config
+dataset: "acs/acs1"        # ACS 1-year; use "acs/acs5" for small geographies
+year: 2023                  # latest ACS 1-year at time of writing; adjust if needed
+
+# Census tables ("groups"). B08301 = Means of Transportation to Work.
+# Its universe is "Workers 16 years and over" and it contains both
+# "Drove alone" (…_003E) and "Worked from home" (…_021E) in the same universe,
+# which is what makes the denominator-swap comparison ground-truthable.
+groups:
+  - "B08301"   # Means of transportation to work
+  - "B08006"   # Sex of workers by means of transportation to work (breakdowns)
+  - "B17001"   # Poverty status (universe: pop for whom poverty status is determined)
+  - "B23025"   # Employment status (out-of-distribution indicator family)
+
+# Geographies to pull. "state:*" = all states; places/metros added in Phase 2.
+geographies:
+  - level: "state"
+    for: "state:*"
+  - level: "us"
+    for: "us:*"
+
+# Census API key. Not strictly required under ~500 calls/day, but recommended.
+# Get one free at https://api.census.gov/data/key_signup.html and export it as
+# CENSUS_API_KEY, or paste it here (leave null to call anonymously).
+api_key: null
+
+out_dir: "data"
+request_timeout_s: 30
+sleep_between_calls_s: 0.3

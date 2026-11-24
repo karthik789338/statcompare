@@ -1,0 +1,60 @@
+# CompStat-Bench recipes: per-table numerator cells and denominator definitions.
+# The two denominators per family differ only in whether "Worked from home" is
+# excluded — that is the population/denominator swap the benchmark is built on.
+# A denominator "formula" is a signed sum of variable ids.
+
+families:
+  B08301:                      # Means of Transportation to Work
+    concept: "Means of Transportation to Work"
+    numerators:
+      - {var: "B08301_003E", name: "drove alone"}
+      - {var: "B08301_004E", name: "carpooled"}
+      - {var: "B08301_010E", name: "public transit"}
+      - {var: "B08301_019E", name: "walked"}
+      - {var: "B08301_020E", name: "worked by other means"}
+    denominators:
+      - name: "all workers"
+        phrase: "among all workers"
+        formula: ["+B08301_001E"]
+      - name: "workers who commuted"
+        phrase: "among workers who traveled to work"
+        formula: ["+B08301_001E", "-B08301_021E"]   # exclude Worked from home
+
+  B23025:                      # Employment Status (universe: Population 16 years and over)
+    concept: "Employment Status"
+    question_template: "In which place was a larger share {phrase} {measure}: {A} or {B}?"
+    numerators:
+      - {var: "B23025_005E", name: "unemployed"}
+      - {var: "B23025_004E", name: "employed"}
+    denominators:
+      - name: "all 16 and over"
+        phrase: "of all adults 16 and over"
+        formula: ["+B23025_001E"]
+      - name: "the labor force"
+        phrase: "of the labor force"
+        formula: ["+B23025_001E", "-B23025_007E"]   # exclude Not in labor force
+
+# How many place-pairs to emit per (numerator x denominator-pair). Flip pairs
+# (where the two denominators disagree on the ordering) are always kept; the
+# rest are sampled to this cap to keep the set balanced.
+sampling:
+  max_pairs_per_cell: 300
+  keep_all_flips: true
+  min_share_gap: 0.01         # drop near-tie pairs so reported flips are substantive
+  random_seed: 13
+
+# Train/dev/test split by held-out GEOGRAPHIES: any item touching a held-out
+# state lands in that split, so these states never appear in train. This gives
+# a real generalisation test (same indicators, unseen places) and non-empty
+# dev/test immediately.
+split:
+  dev_states:  ["Vermont", "Wyoming", "Delaware", "Rhode Island", "Alaska"]
+  test_states: ["Montana", "Maine", "New Hampshire", "Hawaii", "Idaho",
+                "West Virginia", "North Dakota", "South Dakota", "New Mexico",
+                "Mississippi"]
+
+# Entire families held out for the out-of-distribution test split.
+held_out_families: ["B23025"]   # employment held out as the out-of-distribution indicator
+
+# distractors added to each item's candidate pool (wrong-denominator / wrong-cell)
+n_distractors: 3
